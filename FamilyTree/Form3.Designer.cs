@@ -46,7 +46,7 @@ namespace FamilyTree
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(629, 315);
+            this.dataGridView1.Size = new System.Drawing.Size(695, 315);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -66,7 +66,7 @@ namespace FamilyTree
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 455);
+            this.ClientSize = new System.Drawing.Size(719, 455);
             this.Controls.Add(this.acceptButton);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form3";

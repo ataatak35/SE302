@@ -242,7 +242,7 @@ namespace FamilyTree
             // 
             this.addFatherButton.Location = new System.Drawing.Point(792, 24);
             this.addFatherButton.Name = "addFatherButton";
-            this.addFatherButton.Size = new System.Drawing.Size(97, 23);
+            this.addFatherButton.Size = new System.Drawing.Size(104, 23);
             this.addFatherButton.TabIndex = 18;
             this.addFatherButton.Text = "Add Father";
             this.addFatherButton.UseVisualStyleBackColor = true;
@@ -252,7 +252,7 @@ namespace FamilyTree
             // 
             this.addMotherButton.Location = new System.Drawing.Point(792, 59);
             this.addMotherButton.Name = "addMotherButton";
-            this.addMotherButton.Size = new System.Drawing.Size(97, 23);
+            this.addMotherButton.Size = new System.Drawing.Size(104, 23);
             this.addMotherButton.TabIndex = 19;
             this.addMotherButton.Text = "Add Mother";
             this.addMotherButton.UseVisualStyleBackColor = true;
@@ -261,7 +261,7 @@ namespace FamilyTree
             // 
             this.addSiblingButton.Location = new System.Drawing.Point(792, 93);
             this.addSiblingButton.Name = "addSiblingButton";
-            this.addSiblingButton.Size = new System.Drawing.Size(97, 23);
+            this.addSiblingButton.Size = new System.Drawing.Size(104, 23);
             this.addSiblingButton.TabIndex = 20;
             this.addSiblingButton.Text = "Add Sibling";
             this.addSiblingButton.UseVisualStyleBackColor = true;
@@ -270,7 +270,7 @@ namespace FamilyTree
             // 
             this.addChildrenButton.Location = new System.Drawing.Point(792, 125);
             this.addChildrenButton.Name = "addChildrenButton";
-            this.addChildrenButton.Size = new System.Drawing.Size(97, 23);
+            this.addChildrenButton.Size = new System.Drawing.Size(104, 23);
             this.addChildrenButton.TabIndex = 21;
             this.addChildrenButton.Text = "Add Children";
             this.addChildrenButton.UseVisualStyleBackColor = true;
@@ -280,7 +280,7 @@ namespace FamilyTree
             // 
             this.addPartnerButton.Location = new System.Drawing.Point(792, 156);
             this.addPartnerButton.Name = "addPartnerButton";
-            this.addPartnerButton.Size = new System.Drawing.Size(97, 23);
+            this.addPartnerButton.Size = new System.Drawing.Size(104, 23);
             this.addPartnerButton.TabIndex = 24;
             this.addPartnerButton.Text = "Add Partner";
             this.addPartnerButton.UseVisualStyleBackColor = true;
@@ -334,7 +334,7 @@ namespace FamilyTree
             this.Controls.Add(this.fullNameLabel);
             this.Controls.Add(this.namePlaceholder);
             this.Name = "PersonView";
-            this.Size = new System.Drawing.Size(912, 190);
+            this.Size = new System.Drawing.Size(931, 190);
             this.Load += new System.EventHandler(this.PersonView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

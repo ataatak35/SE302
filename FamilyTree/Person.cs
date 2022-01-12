@@ -14,7 +14,10 @@ namespace FamilyTree
         public string Gender { get; set; }
         public string BirthDate { get; set; }
         public string MemberType { get; set; }
-        public Dictionary<string, Person> PersonDictionary { get; set; }
+        public Dictionary<string, object> PersonDictionary { get; set; }
+        public List<Person> childList;
+        public List<Person> siblingList;
+        public Person Partner { get; set; }
 
         public Person()
         {
@@ -22,48 +25,77 @@ namespace FamilyTree
             Age = "0";
             Gender = "unknown";
             BirthDate = "unknown";
-            PersonDictionary = new Dictionary<string, Person>()
+            PersonDictionary = new Dictionary<string, object>()
             {
-                {"Father", null },
-                {"Mother", null },
-                {"Sibling", null },
-                {"Child", null },
-                {"Partner", null },
+                {"Children", childList  },
+                {"Sibling", siblingList }
             };
             id++;
         }
 
-        public Person(int id, string fullName, string age, string gender, string birthDate, string memberType)
-        {
-            FullName = fullName;
-            Age = age;
-            Gender = gender;
-            BirthDate = birthDate;
-            MemberType = memberType;
-            id++;
-        }
+        
 
-        public Person(int id, string fullName, string age, string gender, string birthDate, string memberType, Dictionary<string, Person> personDictionary)
+        public Person(string fullName, string age, string gender, string birthDate, string memberType)
         {
             FullName = fullName;
             Age = age;
             Gender = gender;
             BirthDate = birthDate;
             MemberType = memberType;
-            PersonDictionary = personDictionary;
+            PersonDictionary = new Dictionary<string, object>()
+            {
+                {"Children", childList },
+                {"Sibling", siblingList }
+            };
             id++;
         }
-        public void addFather(int id, string fullName, string age, string gender, string birthDate, string memberType)
+        public void addFather(Person father)
         {
-            Person father = new Person(id, fullName, age, gender, birthDate, memberType);
-            PersonDictionary.Add("Father", father);
+            this.PersonDictionary.Add("Father", father);
+            father.childList.Add(this);
             
         }
 
-        public void addMother(int id, string fullName, string age, string gender, string birthDate, string memberType)
+        public void addMother(Person mother)
         {
-            Person mother = new Person(id, fullName, age, gender, birthDate, memberType);
-            PersonDictionary.Add("Mother", mother);
+            this.PersonDictionary.Add("Mother", mother);
+            mother.childList.Add(this);
+        }
+
+        public void addChildren(List<Person> childrenList)
+        {
+            this.PersonDictionary.Add("Children", childrenList);
+            for(int i=0; i<childrenList.Count; i++)
+            {
+
+            }
+        }
+
+        public void addPartner(Person partner)
+        {
+            this.PersonDictionary.Add("Partner", partner);
+            partner.PersonDictionary.Add("Partner", this);
+            var tempChildList = this.PersonDictionary["Children"] as List<Person>;
+
+            if(tempChildList.Count != 0)
+            {
+                partner.PersonDictionary["Children"] = this.PersonDictionary["Children"];
+            }
+            else
+            {
+                this.PersonDictionary["Childre"] = partner.PersonDictionary["Children"]; 
+
+            }
+        }
+
+        public void addSibling(Person sibling)
+        {
+            this.siblingList.Add(sibling);
+            if(this.PersonDictionary["Fater"] != null)
+            {
+
+            };
+
         }
     }
 

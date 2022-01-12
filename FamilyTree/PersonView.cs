@@ -66,6 +66,8 @@ namespace FamilyTree
             if(form3.ShowDialog() == DialogResult.OK)
             {
                 fatherPlaceholderLabel.Text = form3.currentPerson.FullName;
+                Person.PersonDictionary.Add("Father", form3.currentPerson);
+                
             }
         }
 
