@@ -36,6 +36,7 @@ namespace FamilyTree
         private void ageTextBox_TextChanged(object sender, EventArgs e)
         {
             person.Age = ageTextBox.Text;
+            
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -48,16 +49,10 @@ namespace FamilyTree
             person.Gender = genderComboBox.Text;
         }
 
-        private void memberTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            person.MemberType = memberTypeComboBox.Text;
-            
-        }
-
         public void createPersonView()
         {
-            personView = new PersonView(person, null);
-            //oluşturulan personViewi form1 e aktarmak lazım 
+            personView = new PersonView(person);
+            
         }
 
         private void acceptButton_Click(object sender, EventArgs e)

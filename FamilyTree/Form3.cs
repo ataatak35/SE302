@@ -20,11 +20,18 @@ namespace FamilyTree
             PersonList = personList;
             InitializeComponent();
         }
+        public Form3()
+        {
+            currentPerson = new Person();
+            InitializeComponent();
+        }
 
         private void Form3_Load(object sender, EventArgs e)
         {
             
             dataGridView1.DataSource = PersonList;
+            //dataGridView1.Rows[this]
+            dataGridView1.Columns["PersonDictionary"].Visible = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

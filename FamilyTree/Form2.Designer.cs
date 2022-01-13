@@ -35,8 +35,6 @@ namespace FamilyTree
             this.genderLabel = new System.Windows.Forms.Label();
             this.genderComboBox = new System.Windows.Forms.ComboBox();
             this.ageTextBox = new System.Windows.Forms.TextBox();
-            this.memberTypeLabel = new System.Windows.Forms.Label();
-            this.memberTypeComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.acceptButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -102,31 +100,6 @@ namespace FamilyTree
             this.ageTextBox.TabIndex = 5;
             this.ageTextBox.TextChanged += new System.EventHandler(this.ageTextBox_TextChanged);
             // 
-            // memberTypeLabel
-            // 
-            this.memberTypeLabel.AutoSize = true;
-            this.memberTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.memberTypeLabel.Location = new System.Drawing.Point(125, 324);
-            this.memberTypeLabel.Name = "memberTypeLabel";
-            this.memberTypeLabel.Size = new System.Drawing.Size(111, 20);
-            this.memberTypeLabel.TabIndex = 6;
-            this.memberTypeLabel.Text = "Member Type";
-            // 
-            // memberTypeComboBox
-            // 
-            this.memberTypeComboBox.FormattingEnabled = true;
-            this.memberTypeComboBox.Items.AddRange(new object[] {
-            "Father",
-            "Mother",
-            "Child",
-            "Sibling",
-            "Partner"});
-            this.memberTypeComboBox.Location = new System.Drawing.Point(258, 324);
-            this.memberTypeComboBox.Name = "memberTypeComboBox";
-            this.memberTypeComboBox.Size = new System.Drawing.Size(121, 24);
-            this.memberTypeComboBox.TabIndex = 7;
-            this.memberTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.memberTypeComboBox_SelectedIndexChanged);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -177,8 +150,6 @@ namespace FamilyTree
             this.Controls.Add(this.label1);
             this.Controls.Add(this.acceptButton);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.memberTypeComboBox);
-            this.Controls.Add(this.memberTypeLabel);
             this.Controls.Add(this.ageTextBox);
             this.Controls.Add(this.genderComboBox);
             this.Controls.Add(this.genderLabel);
@@ -201,8 +172,6 @@ namespace FamilyTree
         private System.Windows.Forms.Label genderLabel;
         private System.Windows.Forms.ComboBox genderComboBox;
         private System.Windows.Forms.TextBox ageTextBox;
-        private System.Windows.Forms.Label memberTypeLabel;
-        private System.Windows.Forms.ComboBox memberTypeComboBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button acceptButton;
         private System.Windows.Forms.Label label1;

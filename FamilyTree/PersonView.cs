@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace FamilyTree
 {
+    [Serializable]
     public partial class PersonView : UserControl
     {
         public Person Person { get; set; }
-        public Image Image{ get; set; }
         public List<Person> personList;
         public PersonView()
         {
@@ -21,11 +21,10 @@ namespace FamilyTree
             
         }
 
-        public PersonView(Person person, Image image)
+        public PersonView(Person person)
         {
             InitializeComponent();
             Person = person;
-            Image = image;
             personList = Form1.personList;
             personList.Add(person);
             namePlaceholder.Text = person.FullName;
@@ -51,12 +50,29 @@ namespace FamilyTree
 
         private void pictureBox1_DoubleClick(object sender, EventArgs e)
         {
+            String imageLocation = "";
 
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "PNG files(.*png)|*.png| jpg files(.*jpg)|*.jpg| All Files(*.*)|*.*";
+            
+            if(dialog.ShowDialog() == DialogResult.OK)
+            {
+                imageLocation = dialog.FileName;
+                pictureBox1.ImageLocation = imageLocation;
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            Form3 form3 = new Form3(personList);
 
+            if (form3.ShowDialog() == DialogResult.OK)
+            {
+                Label label = new Label();
+                label.Text = form3.currentPerson.FullName;
+                childrenFlowLayoutPanel2.Controls.Add(label);
+
+            }
         }
 
         private void addFatherButton_Click(object sender, EventArgs e)
@@ -66,8 +82,69 @@ namespace FamilyTree
             if(form3.ShowDialog() == DialogResult.OK)
             {
                 fatherPlaceholderLabel.Text = form3.currentPerson.FullName;
-                Person.PersonDictionary.Add("Father", form3.currentPerson);
+                if(Person.PersonDictionary.ContainsKey("Father") == false) 
+                {
+                    Person.PersonDictionary.Add("Father", form3.currentPerson);
+                }
+                else
+                {
+                    Person.PersonDictionary["Father"] = form3.currentPerson;
+                }
                 
+                
+            }
+        }
+
+        private void addMotherButton_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3(filterFemale());
+
+            if (form3.ShowDialog() == DialogResult.OK)
+            {
+                motherPlaceholderLabel.Text = form3.currentPerson.FullName;
+                if (Person.PersonDictionary.ContainsKey("Mother") == false)
+                {
+                    Person.PersonDictionary.Add("Mother", form3.currentPerson);
+                }
+                else
+                {
+                    Person.PersonDictionary["Mother"] = form3.currentPerson;
+                }
+                
+
+            }
+        }
+
+        private void addSiblingButton_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3(personList);
+
+            if (form3.ShowDialog() == DialogResult.OK)
+            {
+                Label label = new Label();
+                label.Text = form3.currentPerson.FullName;
+                siblingFlowLayoutPanel1.Controls.Add(label);
+                             
+            }
+        }
+
+        private void addPartnerButton_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3(personList);
+
+            if (form3.ShowDialog() == DialogResult.OK)
+            {
+                partnerPlaceholderLabel.Text = form3.currentPerson.FullName;
+                if (Person.PersonDictionary.ContainsKey("Partner") == false)
+                {
+                    Person.PersonDictionary.Add("Partner", form3.currentPerson);
+                }
+                else
+                {
+                    Person.PersonDictionary["Partner"] = form3.currentPerson;
+                }
+                
+
             }
         }
 
@@ -107,6 +184,13 @@ namespace FamilyTree
 
             return tempList;
         }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        
     }
 
 }

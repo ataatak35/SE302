@@ -41,9 +41,7 @@ namespace FamilyTree
             this.siblingLabel = new System.Windows.Forms.Label();
             this.childrenLabel = new System.Windows.Forms.Label();
             this.fatherPlaceholderLabel = new System.Windows.Forms.Label();
-            this.motherPlaceholerLabel = new System.Windows.Forms.Label();
-            this.siblingPlaceholderLabel = new System.Windows.Forms.Label();
-            this.childrenPlaceholderLabel = new System.Windows.Forms.Label();
+            this.motherPlaceholderLabel = new System.Windows.Forms.Label();
             this.birthDatePlaceholderLabel = new System.Windows.Forms.Label();
             this.birthDateLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -54,6 +52,8 @@ namespace FamilyTree
             this.addPartnerButton = new System.Windows.Forms.Button();
             this.partnerPlaceholderLabel = new System.Windows.Forms.Label();
             this.partnerLabel = new System.Windows.Forms.Label();
+            this.siblingFlowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.childrenFlowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,10 +61,11 @@ namespace FamilyTree
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(32, 17);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(181, 152);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(181, 243);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
@@ -153,7 +154,7 @@ namespace FamilyTree
             // 
             this.siblingLabel.AutoSize = true;
             this.siblingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.siblingLabel.Location = new System.Drawing.Point(601, 96);
+            this.siblingLabel.Location = new System.Drawing.Point(597, 128);
             this.siblingLabel.Name = "siblingLabel";
             this.siblingLabel.Size = new System.Drawing.Size(64, 20);
             this.siblingLabel.TabIndex = 9;
@@ -163,7 +164,7 @@ namespace FamilyTree
             // 
             this.childrenLabel.AutoSize = true;
             this.childrenLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.childrenLabel.Location = new System.Drawing.Point(601, 128);
+            this.childrenLabel.Location = new System.Drawing.Point(788, 128);
             this.childrenLabel.Name = "childrenLabel";
             this.childrenLabel.Size = new System.Drawing.Size(76, 20);
             this.childrenLabel.TabIndex = 10;
@@ -179,35 +180,15 @@ namespace FamilyTree
             this.fatherPlaceholderLabel.TabIndex = 11;
             this.fatherPlaceholderLabel.Text = "No Data";
             // 
-            // motherPlaceholerLabel
+            // motherPlaceholderLabel
             // 
-            this.motherPlaceholerLabel.AutoSize = true;
-            this.motherPlaceholerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.motherPlaceholerLabel.Location = new System.Drawing.Point(689, 62);
-            this.motherPlaceholerLabel.Name = "motherPlaceholerLabel";
-            this.motherPlaceholerLabel.Size = new System.Drawing.Size(71, 20);
-            this.motherPlaceholerLabel.TabIndex = 12;
-            this.motherPlaceholerLabel.Text = "No Data";
-            // 
-            // siblingPlaceholderLabel
-            // 
-            this.siblingPlaceholderLabel.AutoSize = true;
-            this.siblingPlaceholderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.siblingPlaceholderLabel.Location = new System.Drawing.Point(689, 96);
-            this.siblingPlaceholderLabel.Name = "siblingPlaceholderLabel";
-            this.siblingPlaceholderLabel.Size = new System.Drawing.Size(71, 20);
-            this.siblingPlaceholderLabel.TabIndex = 13;
-            this.siblingPlaceholderLabel.Text = "No Data";
-            // 
-            // childrenPlaceholderLabel
-            // 
-            this.childrenPlaceholderLabel.AutoSize = true;
-            this.childrenPlaceholderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.childrenPlaceholderLabel.Location = new System.Drawing.Point(689, 128);
-            this.childrenPlaceholderLabel.Name = "childrenPlaceholderLabel";
-            this.childrenPlaceholderLabel.Size = new System.Drawing.Size(71, 20);
-            this.childrenPlaceholderLabel.TabIndex = 14;
-            this.childrenPlaceholderLabel.Text = "No Data";
+            this.motherPlaceholderLabel.AutoSize = true;
+            this.motherPlaceholderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.motherPlaceholderLabel.Location = new System.Drawing.Point(689, 62);
+            this.motherPlaceholderLabel.Name = "motherPlaceholderLabel";
+            this.motherPlaceholderLabel.Size = new System.Drawing.Size(71, 20);
+            this.motherPlaceholderLabel.TabIndex = 12;
+            this.motherPlaceholderLabel.Text = "No Data";
             // 
             // birthDatePlaceholderLabel
             // 
@@ -235,7 +216,7 @@ namespace FamilyTree
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(245, 191);
+            this.panel1.Size = new System.Drawing.Size(245, 275);
             this.panel1.TabIndex = 17;
             // 
             // addFatherButton
@@ -256,21 +237,23 @@ namespace FamilyTree
             this.addMotherButton.TabIndex = 19;
             this.addMotherButton.Text = "Add Mother";
             this.addMotherButton.UseVisualStyleBackColor = true;
+            this.addMotherButton.Click += new System.EventHandler(this.addMotherButton_Click);
             // 
             // addSiblingButton
             // 
-            this.addSiblingButton.Location = new System.Drawing.Point(792, 93);
+            this.addSiblingButton.Location = new System.Drawing.Point(580, 229);
             this.addSiblingButton.Name = "addSiblingButton";
-            this.addSiblingButton.Size = new System.Drawing.Size(104, 23);
+            this.addSiblingButton.Size = new System.Drawing.Size(90, 26);
             this.addSiblingButton.TabIndex = 20;
             this.addSiblingButton.Text = "Add Sibling";
             this.addSiblingButton.UseVisualStyleBackColor = true;
+            this.addSiblingButton.Click += new System.EventHandler(this.addSiblingButton_Click);
             // 
             // addChildrenButton
             // 
-            this.addChildrenButton.Location = new System.Drawing.Point(792, 125);
+            this.addChildrenButton.Location = new System.Drawing.Point(771, 231);
             this.addChildrenButton.Name = "addChildrenButton";
-            this.addChildrenButton.Size = new System.Drawing.Size(104, 23);
+            this.addChildrenButton.Size = new System.Drawing.Size(103, 23);
             this.addChildrenButton.TabIndex = 21;
             this.addChildrenButton.Text = "Add Children";
             this.addChildrenButton.UseVisualStyleBackColor = true;
@@ -278,18 +261,19 @@ namespace FamilyTree
             // 
             // addPartnerButton
             // 
-            this.addPartnerButton.Location = new System.Drawing.Point(792, 156);
+            this.addPartnerButton.Location = new System.Drawing.Point(792, 88);
             this.addPartnerButton.Name = "addPartnerButton";
             this.addPartnerButton.Size = new System.Drawing.Size(104, 23);
             this.addPartnerButton.TabIndex = 24;
             this.addPartnerButton.Text = "Add Partner";
             this.addPartnerButton.UseVisualStyleBackColor = true;
+            this.addPartnerButton.Click += new System.EventHandler(this.addPartnerButton_Click);
             // 
             // partnerPlaceholderLabel
             // 
             this.partnerPlaceholderLabel.AutoSize = true;
             this.partnerPlaceholderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.partnerPlaceholderLabel.Location = new System.Drawing.Point(689, 159);
+            this.partnerPlaceholderLabel.Location = new System.Drawing.Point(689, 91);
             this.partnerPlaceholderLabel.Name = "partnerPlaceholderLabel";
             this.partnerPlaceholderLabel.Size = new System.Drawing.Size(71, 20);
             this.partnerPlaceholderLabel.TabIndex = 23;
@@ -299,16 +283,37 @@ namespace FamilyTree
             // 
             this.partnerLabel.AutoSize = true;
             this.partnerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.partnerLabel.Location = new System.Drawing.Point(601, 159);
+            this.partnerLabel.Location = new System.Drawing.Point(601, 91);
             this.partnerLabel.Name = "partnerLabel";
             this.partnerLabel.Size = new System.Drawing.Size(69, 20);
             this.partnerLabel.TabIndex = 22;
             this.partnerLabel.Text = "Partner:";
             // 
+            // siblingFlowLayoutPanel1
+            // 
+            this.siblingFlowLayoutPanel1.AutoScroll = true;
+            this.siblingFlowLayoutPanel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.siblingFlowLayoutPanel1.Location = new System.Drawing.Point(557, 151);
+            this.siblingFlowLayoutPanel1.Name = "siblingFlowLayoutPanel1";
+            this.siblingFlowLayoutPanel1.Size = new System.Drawing.Size(145, 72);
+            this.siblingFlowLayoutPanel1.TabIndex = 25;
+            this.siblingFlowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            // 
+            // childrenFlowLayoutPanel2
+            // 
+            this.childrenFlowLayoutPanel2.AutoScroll = true;
+            this.childrenFlowLayoutPanel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.childrenFlowLayoutPanel2.Location = new System.Drawing.Point(756, 151);
+            this.childrenFlowLayoutPanel2.Name = "childrenFlowLayoutPanel2";
+            this.childrenFlowLayoutPanel2.Size = new System.Drawing.Size(140, 72);
+            this.childrenFlowLayoutPanel2.TabIndex = 26;
+            // 
             // PersonView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.childrenFlowLayoutPanel2);
+            this.Controls.Add(this.siblingFlowLayoutPanel1);
             this.Controls.Add(this.addPartnerButton);
             this.Controls.Add(this.partnerPlaceholderLabel);
             this.Controls.Add(this.partnerLabel);
@@ -319,9 +324,7 @@ namespace FamilyTree
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.birthDatePlaceholderLabel);
             this.Controls.Add(this.birthDateLabel);
-            this.Controls.Add(this.childrenPlaceholderLabel);
-            this.Controls.Add(this.siblingPlaceholderLabel);
-            this.Controls.Add(this.motherPlaceholerLabel);
+            this.Controls.Add(this.motherPlaceholderLabel);
             this.Controls.Add(this.fatherPlaceholderLabel);
             this.Controls.Add(this.childrenLabel);
             this.Controls.Add(this.siblingLabel);
@@ -334,7 +337,7 @@ namespace FamilyTree
             this.Controls.Add(this.fullNameLabel);
             this.Controls.Add(this.namePlaceholder);
             this.Name = "PersonView";
-            this.Size = new System.Drawing.Size(931, 190);
+            this.Size = new System.Drawing.Size(931, 275);
             this.Load += new System.EventHandler(this.PersonView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -357,9 +360,7 @@ namespace FamilyTree
         private System.Windows.Forms.Label siblingLabel;
         private System.Windows.Forms.Label childrenLabel;
         private System.Windows.Forms.Label fatherPlaceholderLabel;
-        private System.Windows.Forms.Label motherPlaceholerLabel;
-        private System.Windows.Forms.Label siblingPlaceholderLabel;
-        private System.Windows.Forms.Label childrenPlaceholderLabel;
+        private System.Windows.Forms.Label motherPlaceholderLabel;
         private System.Windows.Forms.Label birthDatePlaceholderLabel;
         private System.Windows.Forms.Label birthDateLabel;
         private System.Windows.Forms.Panel panel1;
@@ -370,5 +371,7 @@ namespace FamilyTree
         private System.Windows.Forms.Button addPartnerButton;
         private System.Windows.Forms.Label partnerPlaceholderLabel;
         private System.Windows.Forms.Label partnerLabel;
+        private System.Windows.Forms.FlowLayoutPanel siblingFlowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel childrenFlowLayoutPanel2;
     }
 }

@@ -54,7 +54,7 @@ namespace FamilyTree
             // 
             this.acceptButton.BackColor = System.Drawing.SystemColors.Desktop;
             this.acceptButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.acceptButton.Location = new System.Drawing.Point(520, 403);
+            this.acceptButton.Location = new System.Drawing.Point(548, 403);
             this.acceptButton.Name = "acceptButton";
             this.acceptButton.Size = new System.Drawing.Size(121, 40);
             this.acceptButton.TabIndex = 10;

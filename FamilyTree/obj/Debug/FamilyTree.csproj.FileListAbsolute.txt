@@ -24,3 +24,5 @@ C:\Users\ataat\Desktop\SE302\FamilyTree\obj\Debug\FamilyTree.csproj.GenerateReso
 C:\Users\ataat\Desktop\SE302\FamilyTree\obj\Debug\FamilyTree.csproj.CoreCompileInputs.cache
 C:\Users\ataat\Desktop\SE302\FamilyTree\obj\Debug\FamilyTree.exe
 C:\Users\ataat\Desktop\SE302\FamilyTree\obj\Debug\FamilyTree.pdb
+C:\Users\Ata\Desktop\FamilyTree\FamilyTree\obj\Debug\FamilyTree.Form4.resources
+C:\Users\Ata\Desktop\FamilyTree\FamilyTree\obj\Debug\FamilyTree.Form5.resources
