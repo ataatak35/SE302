@@ -29,6 +29,7 @@ namespace FamilyTree
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.fullNameLabel = new System.Windows.Forms.Label();
             this.fullNameTextBox = new System.Windows.Forms.TextBox();
             this.ageLabel = new System.Windows.Forms.Label();
@@ -106,6 +107,8 @@ namespace FamilyTree
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.Red;
             this.label4.Location = new System.Drawing.Point(113, 39);
+            this.label4.MaximumSize = new System.Drawing.Size(353, 32);
+            this.label4.MinimumSize = new System.Drawing.Size(353, 32);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(353, 32);
             this.label4.TabIndex = 8;
@@ -156,8 +159,11 @@ namespace FamilyTree
             this.Controls.Add(this.ageLabel);
             this.Controls.Add(this.fullNameTextBox);
             this.Controls.Add(this.fullNameLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(592, 537);
+            this.MinimumSize = new System.Drawing.Size(592, 537);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Gondor\'s Family Tree";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -29,6 +29,7 @@ namespace FamilyTree
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.clearButton = new System.Windows.Forms.Button();
             this.familyNameLabel = new System.Windows.Forms.Label();
@@ -42,11 +43,13 @@ namespace FamilyTree
             this.treeViewButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.process1 = new System.Diagnostics.Process();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -67,12 +70,13 @@ namespace FamilyTree
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.splitContainer1.Panel2.Controls.Add(this.pictureBox1);
             this.splitContainer1.Panel2.Controls.Add(this.familyNameLabel2);
             this.splitContainer1.Panel2.Controls.Add(this.treeViewButton);
             this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel1);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(1382, 629);
-            this.splitContainer1.SplitterDistance = 192;
+            this.splitContainer1.Size = new System.Drawing.Size(1382, 653);
+            this.splitContainer1.SplitterDistance = 188;
             this.splitContainer1.TabIndex = 0;
             // 
             // clearButton
@@ -119,16 +123,16 @@ namespace FamilyTree
             this.panel2.Controls.Add(this.howToUseButton);
             this.panel2.Controls.Add(this.saveButton);
             this.panel2.Controls.Add(this.loadButton);
-            this.panel2.Location = new System.Drawing.Point(3, 446);
+            this.panel2.Location = new System.Drawing.Point(3, 470);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(183, 180);
             this.panel2.TabIndex = 6;
             // 
             // howToUseButton
             // 
-            this.howToUseButton.Location = new System.Drawing.Point(36, 45);
+            this.howToUseButton.Location = new System.Drawing.Point(29, 66);
             this.howToUseButton.Name = "howToUseButton";
-            this.howToUseButton.Size = new System.Drawing.Size(111, 36);
+            this.howToUseButton.Size = new System.Drawing.Size(120, 40);
             this.howToUseButton.TabIndex = 8;
             this.howToUseButton.Text = "How to Use";
             this.howToUseButton.UseVisualStyleBackColor = true;
@@ -136,7 +140,7 @@ namespace FamilyTree
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(9, 126);
+            this.saveButton.Location = new System.Drawing.Point(7, 137);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(65, 36);
             this.saveButton.TabIndex = 4;
@@ -146,7 +150,7 @@ namespace FamilyTree
             // 
             // loadButton
             // 
-            this.loadButton.Location = new System.Drawing.Point(105, 126);
+            this.loadButton.Location = new System.Drawing.Point(103, 137);
             this.loadButton.Name = "loadButton";
             this.loadButton.Size = new System.Drawing.Size(75, 36);
             this.loadButton.TabIndex = 5;
@@ -167,9 +171,9 @@ namespace FamilyTree
             // 
             this.treeViewButton.BackColor = System.Drawing.SystemColors.Desktop;
             this.treeViewButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.treeViewButton.Location = new System.Drawing.Point(1062, 589);
+            this.treeViewButton.Location = new System.Drawing.Point(1051, 605);
             this.treeViewButton.Name = "treeViewButton";
-            this.treeViewButton.Size = new System.Drawing.Size(121, 40);
+            this.treeViewButton.Size = new System.Drawing.Size(132, 45);
             this.treeViewButton.TabIndex = 10;
             this.treeViewButton.Text = "Tree View";
             this.treeViewButton.UseVisualStyleBackColor = false;
@@ -178,9 +182,9 @@ namespace FamilyTree
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 39);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 30);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1180, 553);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(970, 611);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // process1
@@ -193,14 +197,28 @@ namespace FamilyTree
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.ImageLocation = "";
+            this.pictureBox1.Location = new System.Drawing.Point(979, 39);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(204, 279);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1382, 629);
+            this.ClientSize = new System.Drawing.Size(1382, 653);
             this.Controls.Add(this.splitContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(1400, 700);
+            this.MinimumSize = new System.Drawing.Size(1400, 700);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Gondor\'s Family Tree";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -208,6 +226,7 @@ namespace FamilyTree
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -228,6 +247,7 @@ namespace FamilyTree
         private System.Windows.Forms.Button treeViewButton;
         private System.Windows.Forms.Label familyNameLabel2;
         private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

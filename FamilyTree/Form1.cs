@@ -10,6 +10,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Principal;
 
 namespace FamilyTree
 {
@@ -27,7 +28,11 @@ namespace FamilyTree
             
             personList = new List<Person>();
             personViewList = new List<PersonView>();
+            
+            
         }
+
+
 
         private void personView2_Load(object sender, EventArgs e)
         {
@@ -57,7 +62,8 @@ namespace FamilyTree
 
         private void howToUseButton_Click(object sender, EventArgs e)
         {
-
+            Form6 form6 = new Form6();
+            form6.Show();
         }
 
         private void treeViewButton_Click(object sender, EventArgs e)
@@ -94,14 +100,14 @@ namespace FamilyTree
 
         private void loadButton_Click(object sender, EventArgs e)
         {
-            
-            
+
+            string path = AppDomain.CurrentDomain.BaseDirectory;
             OpenFileDialog dialog = new OpenFileDialog()
             {
                 FileName = "Select a family file",
                 Filter = "Text files (*.txt)|*.txt",
                 Title = "Open text file",
-                InitialDirectory = "C:\\Users\\Ata\\Desktop\\FamilyTree\\FamilyTree\\bin\\Debug"
+                InitialDirectory = "C:\\Program Files(x86)\\Team4\\Gondor's Family Tree"
             };
             IFormatter f = new BinaryFormatter();
             if (dialog.ShowDialog() == DialogResult.OK)

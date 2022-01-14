@@ -26,3 +26,4 @@ C:\Users\ataat\Desktop\SE302\FamilyTree\obj\Debug\FamilyTree.exe
 C:\Users\ataat\Desktop\SE302\FamilyTree\obj\Debug\FamilyTree.pdb
 C:\Users\Ata\Desktop\FamilyTree\FamilyTree\obj\Debug\FamilyTree.Form4.resources
 C:\Users\Ata\Desktop\FamilyTree\FamilyTree\obj\Debug\FamilyTree.Form5.resources
+C:\Users\Ata\Desktop\FamilyTree\FamilyTree\obj\Debug\FamilyTree.Form6.resources

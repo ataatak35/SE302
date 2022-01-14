@@ -29,6 +29,7 @@ namespace FamilyTree
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.acceptButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -69,8 +70,11 @@ namespace FamilyTree
             this.ClientSize = new System.Drawing.Size(719, 455);
             this.Controls.Add(this.acceptButton);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(737, 502);
+            this.MinimumSize = new System.Drawing.Size(737, 502);
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "Gondor\'s Family Tree";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
