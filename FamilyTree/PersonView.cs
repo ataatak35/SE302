@@ -25,7 +25,7 @@ namespace FamilyTree
         {
             InitializeComponent();
             Person = person;
-            personList = Form1.personList;
+            personList = MainScreenForm.personList;
             personList.Add(person);
             namePlaceholder.Text = person.FullName;
             agePlaceholderLabel.Text = person.Age;
@@ -64,7 +64,7 @@ namespace FamilyTree
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3(personList);
+            MemberSelectForm form3 = new MemberSelectForm(personList);
 
             if (form3.ShowDialog() == DialogResult.OK)
             {
@@ -77,7 +77,7 @@ namespace FamilyTree
 
         private void addFatherButton_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3(filterMale());
+            MemberSelectForm form3 = new MemberSelectForm(filterMale());
             
             if(form3.ShowDialog() == DialogResult.OK)
             {
@@ -97,7 +97,7 @@ namespace FamilyTree
 
         private void addMotherButton_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3(filterFemale());
+            MemberSelectForm form3 = new MemberSelectForm(filterFemale());
 
             if (form3.ShowDialog() == DialogResult.OK)
             {
@@ -117,7 +117,7 @@ namespace FamilyTree
 
         private void addSiblingButton_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3(personList);
+            MemberSelectForm form3 = new MemberSelectForm(personList);
 
             if (form3.ShowDialog() == DialogResult.OK)
             {
@@ -130,7 +130,7 @@ namespace FamilyTree
 
         private void addPartnerButton_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3(personList);
+            MemberSelectForm form3 = new MemberSelectForm(personList);
 
             if (form3.ShowDialog() == DialogResult.OK)
             {
